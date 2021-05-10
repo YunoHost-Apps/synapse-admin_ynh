@@ -1,0 +1,6 @@
+SOURCE_URL=https://github.com/Awesome-Technologies/synapse-admin/archive/0.8.0.tar.gz
+SOURCE_SUM=33b1519c3b6631dac55228ca2cd126ab277d53d27eff8310170ed2343b7ca662
+SOURCE_SUM_PRG=sha256sum
+SOURCE_FORMAT=tar.gz
+SOURCE_IN_SUBDIR=true
+SOURCE_FILENAME=
