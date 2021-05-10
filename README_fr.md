@@ -17,10 +17,6 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/install) 
 
 ![](https://raw.githubusercontent.com/Awesome-Technologies/synapse-admin/master/screenshots.jpg)
 
-## Démo
-
-* [Démo officielle]()
-
 ## Configuration
 
 ## Documentation
@@ -32,8 +28,8 @@ Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/install) 
 
 #### Support multi-utilisateur
 
-* L'authentification LDAP est-elle prise en charge ? **Oui**
-* L'application peut-elle être utilisée par plusieurs utilisateurs ? **Oui**
+* L'authentification LDAP est-elle prise en charge ? **Non**
+* L'application peut-elle être utilisée par plusieurs utilisateurs ? **Non**
 
 #### Architectures supportées
 

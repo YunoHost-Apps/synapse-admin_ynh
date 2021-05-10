@@ -16,10 +16,6 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/inst
 
 ![](https://raw.githubusercontent.com/Awesome-Technologies/synapse-admin/master/screenshots.jpg)
 
-## Demo
-
-* [Official demo]()
-
 ## Configuration
 
 ## Documentation
@@ -31,8 +27,8 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/inst
 
 #### Multi-user support
 
-* Is LDAP supported? **Yes**
-* Can the app be used by multiple users? **Yes**
+* Is LDAP supported? **NO**
+* Can the app be used by multiple users? **NO**
 
 #### Supported architectures
 
