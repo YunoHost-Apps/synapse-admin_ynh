@@ -3,46 +3,28 @@
 [![Niveau d'intégration](https://dash.yunohost.org/integration/synapse-admin.svg)](https://dash.yunohost.org/appci/app/synapse-admin) ![](https://ci-apps.yunohost.org/ci/badges/synapse-admin.status.svg) ![](https://ci-apps.yunohost.org/ci/badges/synapse-admin.maintain.svg)  
 [![Installer Synapse Admin avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=synapse-admin)
 
-*[Read this readme in english.](./README.md)* 
+*[Read this readme in english.](./README.md)*
+*[Lire ce readme en français.](./README_fr.md)*
 
-> *Ce package vous permet d'installer Synapse Admin rapidement et simplement sur un serveur YunoHost.  
-Si vous n'avez pas YunoHost, consultez [le guide](https://yunohost.org/install) pour apprendre comment l'installer.*
+> *Ce package vous permet d'installer Synapse Admin rapidement et simplement sur un serveur YunoHost.
+Si vous n'avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) pour savoir comment l'installer et en profiter.*
 
 ## Vue d'ensemble
 
+Admin UI pour Synapse
 
-**Version incluse :** 0.8.0
+**Version incluse :** 0.8.1~ynh1
 
-## Captures d'écran
 
-![](https://raw.githubusercontent.com/Awesome-Technologies/synapse-admin/master/screenshots.jpg)
 
-## Configuration
+## Documentations et ressources
 
-## Documentation
-
- * Documentation officielle : 
- * Documentation YunoHost : https://yunohost.org/fr/app_synapse-admin
-
-## Caractéristiques spécifiques YunoHost
-
-#### Support multi-utilisateur
-
-* L'authentification LDAP est-elle prise en charge ? **Non**
-* L'application peut-elle être utilisée par plusieurs utilisateurs ? **Non**
-
-#### Architectures supportées
-
-* x86-64 - [![Build Status](https://ci-apps.yunohost.org/ci/logs/synapse-admin.svg)](https://ci-apps.yunohost.org/ci/apps/synapse-admin/)
-* ARMv8-A - [![Build Status](https://ci-apps-arm.yunohost.org/ci/logs/synapse-admin.svg)](https://ci-apps-arm.yunohost.org/ci/apps/synapse-admin/)
-
-## Liens
-
- * Signaler un bug : https://github.com/YunoHost-Apps/synapse-admin_ynh/issues
- * Dépôt de l'application principale : https://github.com/Awesome-Technologies/synapse-admin
- * Site web YunoHost : https://yunohost.org/
-
----
+* Site officiel de l'app : https://github.com/Awesome-Technologies/synapse-admin
+* Documentation officielle utilisateur : https://yunohost.org/en/app_synapse-admin
+* Documentation officielle de l'admin : https://yunohost.org/packaging_apps
+* Dépôt de code officiel de l'app : https://github.com/Awesome-Technologies/synapse-admin
+* Documentation YunoHost pour cette app : https://yunohost.org/app_synapse-admin
+* Signaler un bug : https://github.com/YunoHost-Apps/synapse-admin_ynh/issues
 
 ## Informations pour les développeurs
 
@@ -54,3 +36,5 @@ sudo yunohost app install https://github.com/YunoHost-Apps/synapse-admin_ynh/tre
 ou
 sudo yunohost app upgrade synapse-admin -u https://github.com/YunoHost-Apps/synapse-admin_ynh/tree/testing --debug
 ```
+
+**Plus d'infos sur le packaging d'applications :** https://yunohost.org/packaging_apps
