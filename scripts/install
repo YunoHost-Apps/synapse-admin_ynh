@@ -103,6 +103,13 @@ ynh_script_progression --message="Configuring NGINX web server..." --weight=2
 ynh_add_nginx_config
 
 #=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --time --weight=1
+
+ynh_add_config --template="../conf/.env" --destination="$final_path/.env"
+
+#=================================================
 # SPECIFIC SETUP
 #==============================================
 # INSTALL CODIMD
