@@ -93,6 +93,7 @@ popd
 chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
+chown -R $app:$app $final_path/node_modules
 
 #=================================================
 # NGINX CONFIGURATION
@@ -105,7 +106,7 @@ ynh_add_nginx_config
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --time --weight=1
+ynh_script_progression --message="Adding a configuration file..." --weight=1
 
 ynh_add_config --template="../conf/.env" --destination="$final_path/.env"
 
@@ -119,6 +120,7 @@ ynh_script_progression --message="Building $app... (this will take some time and
 pushd "$final_path"
 	ynh_use_nodejs
 	ynh_exec_warn_less yarn install
+	chown -R $app:$app $final_path/node_modules
 popd
 
 #=================================================
