@@ -21,6 +21,10 @@ Admin UI for Synapse
 
 
 
+## Screenshots
+
+![](./doc/screenshots/screenshots.jpg)
+
 ## Documentation and resources
 
 * Official app website: https://github.com/Awesome-Technologies/synapse-admin
