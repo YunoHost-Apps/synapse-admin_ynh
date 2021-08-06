@@ -3,11 +3,18 @@
     "id": "synapse-admin",
     "packaging_format": 1,
     "description": {
-        "en": "Admin ui for Synapse",
-        "fr": "Admin ui pour Synapse"
+        "en": "Admin UI for Synapse",
+        "fr": "Admin UI pour Synapse"
     },
-    "version": "0.8.0~ynh1",
+    "version": "0.8.1~ynh1",
     "url": "https://github.com/Awesome-Technologies/synapse-admin",
+    "upstream": {
+        "license": "Apache-2.0",
+        "website": "https://github.com/Awesome-Technologies/synapse-admin",
+        "admindoc": "https://yunohost.org/packaging_apps",
+        "userdoc": "https://yunohost.org/en/app_synapse-admin",
+        "code": "https://github.com/Awesome-Technologies/synapse-admin"
+    },
     "license": "Apache-2.0",
     "maintainer": {
         "name": ""
