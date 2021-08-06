@@ -116,12 +116,12 @@ ynh_add_config --template="../conf/.env" --destination="$final_path/.env"
 #==============================================
 ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=40
 
-chown -R $app: $final_path
-
 pushd "$final_path"
 	ynh_use_nodejs
 	ynh_exec_warn_less yarn install
 popd
+
+chown -R $app: $final_path
 
 #=================================================
 # SETUP SYSTEMD
