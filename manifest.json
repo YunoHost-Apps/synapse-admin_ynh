@@ -11,8 +11,6 @@
     "upstream": {
         "license": "Apache-2.0",
         "website": "https://github.com/Awesome-Technologies/synapse-admin",
-        "admindoc": "https://yunohost.org/packaging_apps",
-        "userdoc": "https://yunohost.org/en/app_synapse-admin",
         "code": "https://github.com/Awesome-Technologies/synapse-admin"
     },
     "license": "Apache-2.0",
