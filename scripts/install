@@ -112,7 +112,7 @@ ynh_add_config --template="../conf/.env" --destination="$final_path/.env"
 #=================================================
 # SPECIFIC SETUP
 #==============================================
-# INSTALL CODIMD
+# INSTALL SYNAPSE-ADMIN
 #==============================================
 ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=40
 
