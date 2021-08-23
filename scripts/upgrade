@@ -81,7 +81,7 @@ then
 
 	pushd "$final_path"
 		git fetch --quiet
-	    git checkout stable --quiet
+	    git checkout master --quiet
 	    git pull --quiet
 	    git reset --hard $version_commit --quiet
     popd
