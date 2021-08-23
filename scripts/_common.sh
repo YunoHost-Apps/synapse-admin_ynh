@@ -4,8 +4,7 @@
 # COMMON VARIABLES
 #=================================================
 
-# dependencies used by the app
-pkg_dependencies=""
+version_commit="40d0813898bccb30f00e585718176be8e4821bbe"
 
 nodejs_version=12
 
