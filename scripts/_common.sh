@@ -4,7 +4,7 @@
 # COMMON VARIABLES
 #=================================================
 
-version_commit="40d0813898bccb30f00e585718176be8e4821bbe"
+version_commit="0ff4b30d71ba58a08e096dddf3203564c70ac82e"
 
 nodejs_version=12
 
