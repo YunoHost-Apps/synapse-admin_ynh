@@ -122,6 +122,7 @@ then
 	pushd "$final_path"
 		ynh_use_nodejs
 		ynh_exec_warn_less yarn install
+		ynh_exec_warn_less yarn build
 	popd
 fi
 
