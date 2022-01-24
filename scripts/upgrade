@@ -24,21 +24,8 @@ port=$(ynh_app_setting_get --app=$app --key=port)
 #=================================================
 # CHECK VERSION
 #=================================================
-ynh_script_progression --message="Checking version..."
 
 upgrade_type=$(ynh_check_app_version_changed)
-
-#=================================================
-# ENSURE DOWNWARD COMPATIBILITY
-#=================================================
-ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
-
-# Cleaning legacy permissions
-if ynh_legacy_permissions_exists; then
-	ynh_legacy_permissions_delete_all
-
-	ynh_app_setting_delete --app=$app --key=is_public
-fi
 
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
@@ -53,6 +40,18 @@ ynh_clean_setup () {
 }
 # Exit if an error occurs during the execution of the script
 ynh_abort_if_errors
+
+#=================================================
+# ENSURE DOWNWARD COMPATIBILITY
+#=================================================
+ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
+
+# Cleaning legacy permissions
+if ynh_legacy_permissions_exists; then
+	ynh_legacy_permissions_delete_all
+
+	ynh_app_setting_delete --app=$app --key=is_public
+fi
 
 #=================================================
 # STANDARD UPGRADE STEPS
@@ -79,12 +78,14 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=160
 
-	pushd "$final_path"
-		git fetch --quiet
-	    git checkout master --quiet
-	    git pull --quiet
-	    git reset --hard $version_commit --quiet
-    popd
+	ynh_setup_source --dest_dir="$final_path" --keep="$final_path/.env"
+
+	#pushd "$final_path"
+	#	git fetch --quiet
+	#    git checkout master --quiet
+	#    git pull --quiet
+	#    git reset --hard $version_commit --quiet
+    #popd
 fi
 
 chmod 750 "$final_path"
@@ -126,6 +127,8 @@ then
 	popd
 fi
 
+chown -R $app: $final_path
+
 #=================================================
 # SETUP SYSTEMD
 #=================================================
@@ -148,7 +151,7 @@ yunohost service add $app --description "UI admin for Synapse" --log="/var/log/$
 #=================================================
 ynh_script_progression --message="Starting a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="HTTP Server listening"
+ynh_systemd_action --service_name=$app --action=start --log_path=systemd #--line_match="HTTP Server listening"
 
 #=================================================
 # RELOAD NGINX
