@@ -127,15 +127,21 @@ then
 	popd
 fi
 
-chown -R $app: $final_path
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
+
+ynh_add_config --template="../conf/.env" --destination="$final_path/.env"
+
+chown -R $app:www-data "$final_path"
 
 #=================================================
 # SETUP SYSTEMD
 #=================================================
 ynh_script_progression --message="Configuring a systemd service..." --weight=2
 
-ynh_replace_string --match_string="__ENV_PATH__" --replace_string="$PATH" --target_file="../conf/systemd.service"
-
+env_path="$PATH"
 # Create a dedicated systemd config
 ynh_add_systemd_config
 
