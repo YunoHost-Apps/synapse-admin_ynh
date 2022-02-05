@@ -6,7 +6,7 @@
         "en": "Admin UI for Synapse",
         "fr": "Admin UI pour Synapse"
     },
-    "version": "0.8.1~ynh1",
+    "version": "0.8.3~ynh1",
     "url": "https://github.com/Awesome-Technologies/synapse-admin",
     "upstream": {
         "license": "Apache-2.0",
@@ -18,7 +18,7 @@
         "name": ""
     },
     "requirements": {
-        "yunohost": ">= 4.2.4"
+        "yunohost": ">= 4.3.0"
     },
     "multi_instance": false,
     "services": [
@@ -28,8 +28,7 @@
         "install" : [
             {
                 "name": "domain",
-                "type": "domain",
-                "example": "domain.org"
+                "type": "domain"
             },
             {
                 "name": "is_public",
