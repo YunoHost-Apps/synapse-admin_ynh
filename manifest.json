@@ -37,7 +37,7 @@
                     "en": "The domain of your Synapse server",
                     "fr": "Le domain de votre serveur Synapse"
                 },
-                "example": "matrix.example.com",
+                "example": "synapse.example.com",
                 "default": ""
             },
             {
