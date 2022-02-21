@@ -20,6 +20,7 @@ domain=$(ynh_app_setting_get --app=$app --key=domain)
 path_url=$(ynh_app_setting_get --app=$app --key=path)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
+synapse_domain=$(ynh_app_setting_get --app=$app --key=synapse_domain)
 
 #=================================================
 # CHECK VERSION
@@ -46,6 +47,10 @@ ynh_abort_if_errors
 #=================================================
 ynh_script_progression --message="Ensuring downward compatibility..." --weight=1
 
+if ynh_compare_current_package_version --comparison le --version 0.8.3~ynh2
+then
+	ynh_die --message="Upgrade from version 0.8.3 is not possible. You must uninstall and reinstall Synapse-admin package manually"
+fi
 # Cleaning legacy permissions
 if ynh_legacy_permissions_exists; then
 	ynh_legacy_permissions_delete_all
@@ -78,14 +83,7 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=160
 
-	ynh_setup_source --dest_dir="$final_path" --keep="$final_path/.env"
-
-	#pushd "$final_path"
-	#	git fetch --quiet
-	#    git checkout master --quiet
-	#    git pull --quiet
-	#    git reset --hard $version_commit --quiet
-    #popd
+	ynh_setup_source --dest_dir="$final_path"
 fi
 
 chmod 750 "$final_path"

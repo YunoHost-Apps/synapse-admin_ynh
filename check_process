@@ -1,6 +1,7 @@
 ;; Test complet
 	; Manifest
 		domain="domain.tld"
+		synapse_domain="synapse.domain.tld"
 		path="/path"
 		admin="john"
 		is_public=1

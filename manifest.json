@@ -6,7 +6,7 @@
         "en": "Admin UI for Synapse",
         "fr": "Admin UI pour Synapse"
     },
-    "version": "0.8.3~ynh1",
+    "version": "0.8.3~ynh2",
     "url": "https://github.com/Awesome-Technologies/synapse-admin",
     "upstream": {
         "license": "Apache-2.0",
@@ -29,6 +29,16 @@
             {
                 "name": "domain",
                 "type": "domain"
+            },
+            {
+                "name": "synapse_domain",
+                "type": "domain",
+                "ask": {
+                    "en": "The domain of your Synapse server",
+                    "fr": "Le domain de votre serveur Synapse"
+                },
+                "example": "matrix.example.com",
+                "default": ""
             },
             {
                 "name": "is_public",

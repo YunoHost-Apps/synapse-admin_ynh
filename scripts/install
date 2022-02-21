@@ -23,7 +23,8 @@ ynh_abort_if_errors
 domain=$YNH_APP_ARG_DOMAIN
 path_url="/"
 is_public=$YNH_APP_ARG_IS_PUBLIC
-#synapse_domain=$(yunohost app setting synapse domain)
+synapse_domain=$YNH_APP_ARG_SYNAPSE_DOMAIN
+
 app=$YNH_APP_INSTANCE_NAME
 
 #=================================================
@@ -44,6 +45,7 @@ ynh_script_progression --message="Storing installation settings..." --weight=2
 
 ynh_app_setting_set --app=$app --key=domain --value=$domain
 ynh_app_setting_set --app=$app --key=path --value=$path_url
+ynh_app_setting_set --app=$app --key=synapse_domain --value=$synapse_domain
 
 #=================================================
 # STANDARD MODIFICATIONS
@@ -84,12 +86,6 @@ ynh_app_setting_set --app=$app --key=final_path --value=$final_path
 # Download, check integrity, uncompress and patch the source from app.src
 ynh_setup_source --dest_dir=$final_path
 
-#git clone --quiet https://github.com/Awesome-Technologies/synapse-admin.git -b master "$final_path"
-# Reset branch to the level of update we needed
-#pushd "$final_path"
-#	git reset --hard --quiet $version_commit
-#popd
-
 chmod 750 "$final_path"
 chmod -R o-rwx "$final_path"
 chown -R $app:www-data "$final_path"
@@ -101,13 +97,6 @@ ynh_script_progression --message="Configuring NGINX web server..." --weight=2
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
-
-#=================================================
-# ADD A CONFIGURATION
-#=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
-
-ynh_add_config --template="../conf/.env" --destination="$final_path/.env"
 
 #=================================================
 # SPECIFIC SETUP
