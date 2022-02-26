@@ -22,10 +22,6 @@ final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 port=$(ynh_app_setting_get --app=$app --key=port)
 synapse_app=$(ynh_app_setting_get --app=$app --key=synapse_app)
 
-# Reload Synapse's settings, in case of they changed
-synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=domain)
-synapse_port=$(ynh_app_setting_get --app=$synapse_app --key=synapse_port)
-
 #=================================================
 # CHECK VERSION
 #=================================================
@@ -62,7 +58,15 @@ if ynh_legacy_permissions_exists; then
 	ynh_app_setting_delete --app=$app --key=is_public
 fi
 
-# Store Synapse's settings, in case of they changed
+# If synapse_app doesn't exist, create it and assume it is `synapse`
+if [ -z "$synapse_app" ]; then
+	synapse_app="synapse"
+	ynh_app_setting_set --app=$app --key=synapse_app --value=$synapse_app
+fi
+
+# Reload and store Synapse's settings, in case of they changed
+synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=domain)
+synapse_port=$(ynh_app_setting_get --app=$synapse_app --key=synapse_port)
 ynh_app_setting_set --app=$app --key=synapse_domain --value=$synapse_domain
 ynh_app_setting_set --app=$app --key=synapse_port --value=$synapse_port
 
