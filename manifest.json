@@ -31,14 +31,12 @@
                 "type": "domain"
             },
             {
-                "name": "synapse_domain",
-                "type": "domain",
+                "name": "synapse_app",
+                "type": "app",
                 "ask": {
-                    "en": "The domain of your Synapse server",
-                    "fr": "Le domain de votre serveur Synapse"
-                },
-                "example": "synapse.example.com",
-                "default": ""
+                    "en": "Select the Synapse app you wish to connect to.",
+                    "fr": "Sélectionnez l'app Synapse à laquelle vous souhaitez vous connecter."
+                }
             },
             {
                 "name": "is_public",
