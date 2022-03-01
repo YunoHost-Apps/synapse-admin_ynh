@@ -43,7 +43,7 @@ test ! -d $final_path || ynh_die --message="There is already a directory: $final
 ynh_script_progression --message="Restoring the NGINX configuration..."
 
 ynh_restore_file --origin_path="/etc/nginx/conf.d/$domain.d/$app.conf"
-ynh_restore_file --origin_path="/etc/nginx/conf.d/${synapse_domain}.d/synapse-admin.conf"
+ynh_restore_file --origin_path="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
 # RECREATE THE DEDICATED USER

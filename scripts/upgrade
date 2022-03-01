@@ -111,7 +111,7 @@ ynh_script_progression --message="Upgrading NGINX web server configuration..." -
 ynh_add_nginx_config
 
 # Create NGINX config to access /_synapse/admin endpoint
-ynh_add_config --template="synapse.nginx.conf" --destination="/etc/nginx/conf.d/${synapse_domain}.d/synapse-admin.conf"
+ynh_add_config --template="endpoint.nginx.conf" --destination="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
 # UPGRADE DEPENDENCIES
