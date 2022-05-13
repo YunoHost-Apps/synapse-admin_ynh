@@ -4,9 +4,7 @@
 # COMMON VARIABLES
 #=================================================
 
-version_commit="abc9d5154eeee86b2cb23b349a7326483249ee0c"
-
-nodejs_version=12
+nodejs_version=18
 
 #=================================================
 # PERSONAL HELPERS
