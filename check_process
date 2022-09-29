@@ -1,9 +1,11 @@
 ;; Test complet
+	; pre-install
+		sudo yunohost tools update apps
+		sudo yunohost app install https://github.com/YunoHost-Apps/synapse_ynh/tree/823f98a8cbe108ad4cc0e38e280a83401dca2b9f -a "domain=sub.domain.tld&server_name=$server_name&is_free_registration=$is_free_registration&jitsi_server=$jitsi_server" --force
 	; Manifest
 		domain="domain.tld"
+		synapse_app="synapse"
 		synapse_domain="sub.domain.tld"
-		path="/path"
-		admin="john"
 		is_public=1
 	; Checks
 		pkg_linter=1
