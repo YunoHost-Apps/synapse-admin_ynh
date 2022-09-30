@@ -6,7 +6,7 @@
         "en": "Admin UI for Synapse",
         "fr": "Admin UI pour Synapse"
     },
-    "version": "0.8.5~ynh1",
+    "version": "0.8.5~ynh2",
     "url": "https://github.com/Awesome-Technologies/synapse-admin",
     "upstream": {
         "license": "Apache-2.0",
@@ -31,14 +31,17 @@
                 "type": "domain"
             },
             {
-                "name": "synapse_domain",
-                "type": "domain",
+                "name": "synapse_app",
+                "type": "string",
                 "ask": {
-                    "en": "The domain of your Synapse server",
-                    "fr": "Le domain de votre serveur Synapse"
+                    "en": "Input the Synapse app ID you wish to connect to.",
+                    "fr": "Entrez l'ID de l'app Synapse à laquelle vous souhaitez vous connecter."
                 },
-                "example": "synapse.example.com",
-                "default": ""
+                "help": {
+                    "en": "Leave the default value if you have only one Synapse server installed.",
+                    "fr": "Laissez la valeur par défaut si vous n'avez installé qu'un seul serveur Synapse."
+                },
+                "default": "synapse"
             },
             {
                 "name": "is_public",
