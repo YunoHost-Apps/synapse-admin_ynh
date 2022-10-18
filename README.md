@@ -19,7 +19,6 @@ Admin UI for Synapse
 
 **Shipped version:** 0.8.5~ynh2
 
-
 ## Screenshots
 
 ![Screenshot of Synapse Admin](./doc/screenshots/screenshots.jpg)
