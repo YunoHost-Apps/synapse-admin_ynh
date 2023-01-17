@@ -25,7 +25,6 @@ Admin UI for Synapse
 
 ## Documentation and resources
 
-* Official app website: <https://github.com/Awesome-Technologies/synapse-admin>
 * Upstream app code repository: <https://github.com/Awesome-Technologies/synapse-admin>
 * YunoHost documentation for this app: <https://yunohost.org/app_synapse-admin>
 * Report a bug: <https://github.com/YunoHost-Apps/synapse-admin_ynh/issues>
