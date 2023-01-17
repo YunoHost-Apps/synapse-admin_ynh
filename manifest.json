@@ -10,7 +10,6 @@
     "url": "https://github.com/Awesome-Technologies/synapse-admin",
     "upstream": {
         "license": "Apache-2.0",
-        "website": "https://github.com/Awesome-Technologies/synapse-admin",
         "code": "https://github.com/Awesome-Technologies/synapse-admin"
     },
     "license": "Apache-2.0",
@@ -18,7 +17,7 @@
         "name": ""
     },
     "requirements": {
-        "yunohost": ">= 4.3.0"
+        "yunohost": ">= 11.0.9"
     },
     "multi_instance": false,
     "services": [
