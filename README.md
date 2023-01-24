@@ -5,7 +5,7 @@ It shall NOT be edited by hand.
 
 # Synapse Admin for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/synapse-admin.svg)](https://dash.yunohost.org/appci/app/synapse-admin) ![Working status](https://ci-apps.yunohost.org/ci/badges/synapse-admin.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/synapse-admin.maintain.svg)  
+[![Integration level](https://dash.yunohost.org/integration/synapse-admin.svg)](https://dash.yunohost.org/appci/app/synapse-admin) ![Working status](https://ci-apps.yunohost.org/ci/badges/synapse-admin.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/synapse-admin.maintain.svg)
 [![Install Synapse Admin with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=synapse-admin)
 
 *[Lire ce readme en français.](./README_fr.md)*
