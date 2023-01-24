@@ -17,7 +17,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 Admin UI pour Synapse
 
-**Version incluse :** 0.8.5~ynh3
+**Version incluse :** 0.8.5~ynh4
 
 ## Captures d’écran
 
