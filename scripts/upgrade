@@ -95,7 +95,7 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=160
 
-	ynh_setup_source --dest_dir="$final_path"
+	ynh_setup_source --dest_dir="$final_path" --keep=".env"
 fi
 
 chmod 750 "$final_path"
@@ -143,11 +143,11 @@ fi
 #=================================================
 # ADD A CONFIGURATION
 #=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
+#ynh_script_progression --message="Adding a configuration file..." --weight=1
 
-ynh_add_config --template="../conf/.env" --destination="$final_path/.env"
+#ynh_add_config --template="../conf/.env" --destination="$final_path/.env"
 
-chown -R $app:www-data "$final_path"
+#chown -R $app:www-data "$final_path"
 
 #=================================================
 # SETUP SYSTEMD

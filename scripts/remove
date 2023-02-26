@@ -20,7 +20,7 @@ domain=$(ynh_app_setting_get --app=$app --key=domain)
 port=$(ynh_app_setting_get --app=$app --key=port)
 final_path=$(ynh_app_setting_get --app=$app --key=final_path)
 synapse_app=$(ynh_app_setting_get --app=$app --key=synapse_app)
-synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=synapse_domain)
+synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=domain)
 
 #=================================================
 # STANDARD REMOVE
@@ -72,12 +72,11 @@ ynh_secure_remove --file="$final_path"
 #=================================================
 ynh_script_progression --message="Removing NGINX web server configuration..." --weight=5
 
+# Remove NGINX config that enabled /_synapse/admin endpoint
+ynh_secure_remove --file="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
+
 # Remove the dedicated NGINX config
 ynh_remove_nginx_config
-
-# Remove NGINX config that enabled /_synapse/admin endpoint
-ynh_secure_remove --file="/etc/nginx/conf.d/${synapse_domain}.d/synapse-admin.conf"
-ynh_secure_remove --file="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
 # GENERIC FINALIZATION
