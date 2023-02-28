@@ -1,6 +1,5 @@
 SOURCE_URL=https://api.github.com/repos/Awesome-Technologies/synapse-admin/tarball/0.8.7
 SOURCE_SUM=25f1f98decd697dbd6663307ee5cba1338e99b4db6aeed25dc718bb3db8362c7
 SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=7
+SOURCE_FORMAT=tar.gz
 SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=
