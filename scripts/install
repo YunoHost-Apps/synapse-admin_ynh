@@ -13,20 +13,15 @@ source /usr/share/yunohost/helpers
 # RETRIEVE ARGUMENTS FROM THE MANIFEST
 #=================================================
 
-#REMOVEME? synapse_app=$YNH_APP_ARG_SYNAPSE_APP
-#REMOVEME? synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=domain)
-#REMOVEME? synapse_port=$(ynh_app_setting_get --app=$synapse_app --key=synapse_port)
+synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=domain)
+synapse_port=$(ynh_app_setting_get --app=$synapse_app --key=synapse_port)
 
 #=================================================
 # STORE SETTINGS FROM MANIFEST
 #=================================================
-#REMOVEME? ynh_script_progression --message="Storing installation settings..." --weight=2
 
-#REMOVEME? ynh_app_setting_set --app=$app --key=domain --value=$domain
-#REMOVEME? ynh_app_setting_set --app=$app --key=path --value=$path
-ynh_app_setting_set --app=$app --key=synapse_app --value=$synapse_app
-#REMOVEME? ynh_app_setting_set --app=$app --key=synapse_domain --value=$synapse_domain
-#REMOVEME? ynh_app_setting_set --app=$app --key=synapse_port --value=$synapse_port
+ynh_app_setting_set --app=$app --key=synapse_domain --value=$synapse_domain
+ynh_app_setting_set --app=$app --key=synapse_port --value=$synapse_port
 
 #=================================================
 # INSTALL DEPENDENCIES
