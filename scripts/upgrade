@@ -40,7 +40,7 @@ ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
 
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
-	ynh_script_progression --message="Upgrading source files..." --weight=160
+	ynh_script_progression --message="Upgrading source files..." --weight=16
 
 	ynh_setup_source --dest_dir="$install_dir" --keep=".env"
 fi
@@ -74,7 +74,7 @@ ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 #==============================================
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
-	ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=60
+	ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=6
 
 	pushd "$install_dir"
 		ynh_use_nodejs

@@ -12,7 +12,6 @@ maintainers = ["eric_G"]
 [upstream]
 license = "Apache-2.0"
 code = "https://github.com/Awesome-Technologies/synapse-admin"
-website = "https://github.com/Awesome-Technologies/synapse-admin"
 
 [integration]
 yunohost = ">= 11.1.14"
