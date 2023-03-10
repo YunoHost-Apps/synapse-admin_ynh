@@ -1,5 +1,0 @@
-SOURCE_URL=https://github.com/Awesome-Technologies/synapse-admin/releases/download/0.8.7/synapse-admin-0.8.7-dirty.tar.gz
-SOURCE_SUM=3f74cbfec0a3b14b5684d1bded4816a7946d2e9b88b7186767189c14811224e9
-SOURCE_SUM_PRG=sha256sum
-SOURCE_FORMAT=tar.gz
-SOURCE_IN_SUBDIR=true
