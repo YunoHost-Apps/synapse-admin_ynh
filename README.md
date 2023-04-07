@@ -16,7 +16,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Admin UI for Synapse
+Synapse-admin is an Admin UI for Matrix Synapse homeserver.
 
 **Shipped version:** 0.8.7~ynh1
 
