@@ -44,8 +44,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/Awesome-Technologies/synapse-admin/releases/download/0.8.7/synapse-admin-0.8.7-dirty.tar.gz"
-    sha256 = "3f74cbfec0a3b14b5684d1bded4816a7946d2e9b88b7186767189c14811224e9"
+    url = "https://github.com/Awesome-Technologies/synapse-admin/archive/refs/tags/0.8.7.tar.gz"
+    sha256 = "76d2d938e9b67a65a07cd2fe921bb810258ff3b5d6b30d00d62112e30acece08"
 
     [resources.ports]
 
