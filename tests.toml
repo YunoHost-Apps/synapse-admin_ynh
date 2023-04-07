@@ -19,6 +19,4 @@ test_format = 1.0
 
     args.synapse_app = "synapse"
     args.synapse_domain="sub.domain.tld"
-
-
 		
