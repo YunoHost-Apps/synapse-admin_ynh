@@ -1,1 +1,0 @@
-Synapse-admin is an Admin UI for Matrix Synapse homeserver.
