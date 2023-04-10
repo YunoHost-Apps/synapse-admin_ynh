@@ -46,6 +46,7 @@ ram.runtime = "50M"
     [resources.sources.main]
     url = "https://github.com/Awesome-Technologies/synapse-admin/archive/refs/tags/0.8.7.tar.gz"
     sha256 = "76d2d938e9b67a65a07cd2fe921bb810258ff3b5d6b30d00d62112e30acece08"
+    autoupdate.strategy = "latest_github_tag"
 
     [resources.ports]
 
