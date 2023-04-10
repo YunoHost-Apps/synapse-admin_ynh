@@ -6,7 +6,7 @@
         "en": "Admin UI for Synapse",
         "fr": "Admin UI pour Synapse"
     },
-    "version": "0.8.7~ynh1",
+    "version": "0.8.7~ynh2",
     "url": "https://github.com/Awesome-Technologies/synapse-admin",
     "upstream": {
         "license": "Apache-2.0",
