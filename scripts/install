@@ -58,7 +58,7 @@ ynh_add_config --template="endpoint.nginx.conf" --destination="/etc/nginx/conf.d
 #==============================================
 # INSTALL SYNAPSE-ADMIN
 #==============================================
-ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=40
+ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=20
 
 pushd "$install_dir"
 	ynh_use_nodejs

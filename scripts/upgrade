@@ -74,7 +74,7 @@ ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 #==============================================
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
-	ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=6
+	ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=20
 
 	pushd "$install_dir"
 		ynh_use_nodejs
