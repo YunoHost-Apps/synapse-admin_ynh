@@ -12,6 +12,13 @@ source /usr/share/yunohost/helpers
 #=================================================
 # STANDARD MODIFICATIONS
 #=================================================
+# STOP SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Stopping a systemd service..." --weight=1
+
+ynh_systemd_action --service_name=$app --action=stop --log_path="systemd"
+
+#=================================================
 # MODIFY URL IN NGINX CONF
 #=================================================
 ynh_script_progression --message="Updating NGINX web server configuration..." --weight=1
@@ -21,11 +28,12 @@ ynh_change_url_nginx_config
 #=================================================
 # GENERIC FINALISATION
 #=================================================
-# RELOAD NGINX
+# START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Reloading NGINX web server..." --weight=1
+ynh_script_progression --message="Starting a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=nginx --action=reload
+# Start a systemd service
+ynh_systemd_action --service_name=$app --action=start --log_path=systemd --line_match="HTTP Server listening"
 
 #=================================================
 # END OF SCRIPT

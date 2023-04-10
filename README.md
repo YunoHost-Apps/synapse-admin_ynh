@@ -18,7 +18,11 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Synapse-admin is an Admin UI for Matrix Synapse homeserver.
 
+<<<<<<< HEAD
 **Shipped version:** 0.8.7~ynh2
+=======
+**Shipped version:** 0.8.7~ynh1
+>>>>>>> parent of ec2cc1d (Merge branch 'testing' into version-2)
 
 ## Screenshots
 
