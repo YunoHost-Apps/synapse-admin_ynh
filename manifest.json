@@ -1,0 +1,56 @@
+{
+    "name": "Synapse Admin",
+    "id": "synapse-admin",
+    "packaging_format": 1,
+    "description": {
+        "en": "Admin UI for Synapse",
+        "fr": "Admin UI pour Synapse"
+    },
+    "version": "0.8.7~ynh2",
+    "url": "https://github.com/Awesome-Technologies/synapse-admin",
+    "upstream": {
+        "license": "Apache-2.0",
+        "code": "https://github.com/Awesome-Technologies/synapse-admin"
+    },
+    "license": "Apache-2.0",
+    "maintainer": {
+        "name": ""
+    },
+    "requirements": {
+        "yunohost": ">= 11.1.14"
+    },
+    "multi_instance": false,
+    "services": [
+        "nginx"
+    ],
+    "arguments": {
+        "install": [
+            {
+                "name": "domain",
+                "type": "domain"
+            },
+            {
+                "name": "synapse_app",
+                "type": "string",
+                "ask": {
+                    "en": "Input the Synapse app ID you wish to connect to.",
+                    "fr": "Entrez l'ID de l'app Synapse à laquelle vous souhaitez vous connecter."
+                },
+                "help": {
+                    "en": "Leave the default value if you have only one Synapse server installed.",
+                    "fr": "Laissez la valeur par défaut si vous n'avez installé qu'un seul serveur Synapse."
+                },
+                "default": "synapse"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "help": {
+                    "en": "If enabled, Synapse Admin will be accessible by people who do not have an account. This can be changed later via the webadmin.",
+                    "fr": "Si cette case est cochée, Synapse Admin sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."
+                },
+                "default": true
+            }
+        ]
+    }
+}

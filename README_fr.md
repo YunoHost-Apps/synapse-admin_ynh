@@ -18,7 +18,11 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 Synapse-admin is an Admin UI for Matrix Synapse homeserver.
 
+<<<<<<< HEAD
 **Version incluse :** 0.8.7~ynh1
+=======
+**Version incluse :** 0.8.7~ynh2
+>>>>>>> testing
 
 ## Captures d’écran
 

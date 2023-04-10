@@ -10,6 +10,13 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
+# LOAD SETTINGS
+#=================================================
+ynh_script_progression --message="Loading installation settings..." --weight=1
+
+synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=domain)
+
+#=================================================
 # STANDARD REMOVE
 #=================================================
 # REMOVE SERVICE INTEGRATION IN YUNOHOST
@@ -23,27 +30,12 @@ then
 fi
 
 #=================================================
-# STOP AND REMOVE SERVICE
+# REMOVE APP MAIN DIR
 #=================================================
-ynh_script_progression --message="Stopping and removing the systemd service..." --weight=1
+ynh_script_progression --message="Removing app main directory..." --weight=6
 
-# Remove the dedicated systemd config
-ynh_remove_systemd_config
-
-#=================================================
-# REMOVE LOGROTATE CONFIGURATION
-#=================================================
-ynh_script_progression --message="Removing logrotate configuration..." --weight=1
-
-# Remove the app-specific logrotate config
-ynh_remove_logrotate
-
-#=================================================
-# REMOVE DEPENDENCIES
-#=================================================
-
-# Remove metapackage and its dependencies
-ynh_remove_nodejs
+# Remove the app directory securely
+ynh_secure_remove --file="$final_path"
 
 #=================================================
 # REMOVE NGINX CONFIGURATION
