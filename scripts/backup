@@ -34,12 +34,6 @@ ynh_backup --src_path="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 ynh_backup --src_path="/etc/logrotate.d/$app"
 
 #=================================================
-# BACKUP SYSTEMD
-#=================================================
-
-ynh_backup --src_path="/etc/systemd/system/$app.service"
-
-#=================================================
 # END OF SCRIPT
 #=================================================
 

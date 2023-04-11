@@ -26,15 +26,6 @@ then
 fi
 
 #=================================================
-# STANDARD UPGRADE STEPS
-#=================================================
-# STOP SYSTEMD SERVICE
-#=================================================
-ynh_script_progression --message="Stopping a systemd service..." --weight=1
-
-ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
-
-#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 
@@ -62,7 +53,7 @@ ynh_add_config --template="endpoint.nginx.conf" --destination="/etc/nginx/conf.d
 #=================================================
 # UPGRADE DEPENDENCIES
 #=================================================
-#REMOVEME? ynh_script_progression --message="Upgrading dependencies..." --weight=18
+ynh_script_progression --message="Upgrading dependencies..." --weight=18
 
 # Install Nodejs
 ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
@@ -91,29 +82,6 @@ fi
 #ynh_add_config --template="../conf/.env" --destination="$install_dir/.env"
 
 #chown -R $app:www-data "$install_dir"
-
-#=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_script_progression --message="Configuring a systemd service..." --weight=2
-
-env_path="$PATH"
-# Create a dedicated systemd config
-ynh_add_systemd_config
-
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..."
-
-yunohost service add $app --description "UI admin for Synapse" --log="/var/log/$app/$app.log"
-
-#=================================================
-# START SYSTEMD SERVICE
-#=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
-
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd #--line_match="HTTP Server listening"
 
 #=================================================
 # END OF SCRIPT
