@@ -31,7 +31,7 @@ upgrade_type=$(ynh_check_app_version_changed)
 #=================================================
 # BACKUP BEFORE UPGRADE THEN ACTIVE TRAP
 #=================================================
-ynh_script_progression --message="Backing up $app before upgrading (may take a while)..." --weight=20
+ynh_script_progression --message="Backing up $app before upgrading (may take a while)..." --weight=5
 
 # Backup the current version of the app
 ynh_backup_before_upgrade
@@ -64,6 +64,19 @@ if [ -z "$synapse_app" ]; then
 	ynh_app_setting_set --app=$app --key=synapse_app --value=$synapse_app
 fi
 
+# Delete service and nodejs dependencies
+if ynh_compare_current_package_version --comparison lt --version 0.8.7~ynh1
+then
+	ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
+	yunohost service remove $app
+	ynh_remove_nodejs
+	ynh_remove_logrotate
+	ynh_remove_app_dependencies
+
+	ynh_app_setting_delete --app=$app --key=synapse_port
+	ynh_app_setting_delete --app=$app --key=port
+fi
+
 # Reload and store Synapse's settings, in case of they changed
 synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=domain)
 synapse_port=$(ynh_app_setting_get --app=$synapse_app --key=synapse_port)
@@ -72,13 +85,6 @@ ynh_app_setting_set --app=$app --key=synapse_port --value=$synapse_port
 
 #=================================================
 # STANDARD UPGRADE STEPS
-#=================================================
-# STOP SYSTEMD SERVICE
-#=================================================
-ynh_script_progression --message="Stopping a systemd service..." --weight=1
-
-ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
-
 #=================================================
 # CREATE DEDICATED USER
 #=================================================
@@ -93,9 +99,9 @@ ynh_system_user_create --username=$app --home_dir="$final_path"
 
 if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
-	ynh_script_progression --message="Upgrading source files..." --weight=160
+	ynh_script_progression --message="Upgrading source files..." --weight=2
 
-	ynh_setup_source --dest_dir="$final_path" --keep=".env"
+	ynh_setup_source --dest_dir="$final_path"
 fi
 
 chmod 750 "$final_path"
@@ -105,72 +111,13 @@ chown -R $app:www-data "$final_path"
 #=================================================
 # NGINX CONFIGURATION
 #=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=2
+ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
 
 # Create a dedicated nginx config
 ynh_add_nginx_config
 
 # Create NGINX config to access /_synapse/admin endpoint
 ynh_add_config --template="endpoint.nginx.conf" --destination="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
-
-#=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=18
-
-# Install Nodejs
-ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
-
-# Install Yarn
-ynh_install_extra_app_dependencies --repo="deb https://dl.yarnpkg.com/debian/ stable main" --package="yarn" --key="https://dl.yarnpkg.com/debian/pubkey.gpg"
-
-#=================================================
-# SPECIFIC UPGRADE
-#==============================================
-# INSTALL CODIMD
-#==============================================
-if [ "$upgrade_type" == "UPGRADE_APP" ]
-then
-	ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=60
-
-	pushd "$final_path"
-		ynh_use_nodejs
-		ynh_exec_warn_less yarn install
-		ynh_exec_warn_less yarn build
-	popd
-fi
-
-#=================================================
-# ADD A CONFIGURATION
-#=================================================
-#ynh_script_progression --message="Adding a configuration file..." --weight=1
-
-#ynh_add_config --template="../conf/.env" --destination="$final_path/.env"
-
-#chown -R $app:www-data "$final_path"
-
-#=================================================
-# SETUP SYSTEMD
-#=================================================
-ynh_script_progression --message="Configuring a systemd service..." --weight=2
-
-env_path="$PATH"
-# Create a dedicated systemd config
-ynh_add_systemd_config
-
-#=================================================
-# INTEGRATE SERVICE IN YUNOHOST
-#=================================================
-ynh_script_progression --message="Integrating service in YunoHost..."
-
-yunohost service add $app --description "UI admin for Synapse" --log="/var/log/$app/$app.log"
-
-#=================================================
-# START SYSTEMD SERVICE
-#=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
-
-ynh_systemd_action --service_name=$app --action=start --log_path=systemd #--line_match="HTTP Server listening"
 
 #=================================================
 # RELOAD NGINX

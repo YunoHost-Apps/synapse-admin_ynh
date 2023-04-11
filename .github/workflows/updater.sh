@@ -79,11 +79,11 @@ checksum=$(sha256sum "$tempdir/$filename" | head -c 64)
 rm -rf $tempdir
 
 # Get extension
-if [[ $filename == *.tar.gz ]]; then
+#if [[ $filename == *.tar.gz ]]; then
 extension=tar.gz
-else
-extension=${filename##*.}
-fi
+#else
+#extension=${filename##*.}
+#fi
 
 # Rewrite source file
 cat <<EOT > conf/$src.src
@@ -92,7 +92,6 @@ SOURCE_SUM=$checksum
 SOURCE_SUM_PRG=sha256sum
 SOURCE_FORMAT=$extension
 SOURCE_IN_SUBDIR=true
-SOURCE_FILENAME=
 EOT
 echo "... conf/$src.src updated"
 
