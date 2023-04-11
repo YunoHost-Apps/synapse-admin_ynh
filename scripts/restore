@@ -30,13 +30,6 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
-# SPECIFIC RESTORATION
-#=================================================
-
-# Install Nodejs
-ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
-
-#=================================================
 # RESTORE THE LOGROTATE CONFIGURATION
 #=================================================
 ynh_script_progression --message="Restoring the logrotate configuration..." --weight=1

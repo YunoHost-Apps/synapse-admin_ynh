@@ -51,30 +51,6 @@ ynh_add_nginx_config
 ynh_add_config --template="endpoint.nginx.conf" --destination="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
-# UPGRADE DEPENDENCIES
-#=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=18
-
-# Install Nodejs
-ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
-
-#=================================================
-# SPECIFIC UPGRADE
-#==============================================
-# INSTALL CODIMD
-#==============================================
-if [ "$upgrade_type" == "UPGRADE_APP" ]
-then
-	ynh_script_progression --message="Building $app... (this will take some time and resources!)" --weight=20
-
-	pushd "$install_dir"
-		ynh_use_nodejs
-		ynh_exec_warn_less yarn install
-		ynh_exec_warn_less yarn build
-	popd
-fi
-
-#=================================================
 # ADD A CONFIGURATION
 #=================================================
 #ynh_script_progression --message="Adding a configuration file..." --weight=1
