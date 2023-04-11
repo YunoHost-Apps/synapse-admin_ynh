@@ -55,14 +55,6 @@ ynh_add_config --template="../conf/.env" --destination="$install_dir/.env"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
-# SETUP LOGROTATE
-#=================================================
-ynh_script_progression --message="Configuring log rotation..." --weight=1
-
-# Use logrotate to manage application logfile(s)
-ynh_use_logrotate
-
-#=================================================
 # END OF SCRIPT
 #=================================================
 
