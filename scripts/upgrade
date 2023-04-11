@@ -33,7 +33,7 @@ if [ "$upgrade_type" == "UPGRADE_APP" ]
 then
 	ynh_script_progression --message="Upgrading source files..." --weight=16
 
-	ynh_setup_source --dest_dir="$install_dir" --keep=".env"
+	ynh_setup_source --dest_dir="$install_dir"
 fi
 
 chmod -R o-rwx "$install_dir"
@@ -49,15 +49,6 @@ ynh_add_nginx_config
 
 # Create NGINX config to access /_synapse/admin endpoint
 ynh_add_config --template="endpoint.nginx.conf" --destination="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
-
-#=================================================
-# ADD A CONFIGURATION
-#=================================================
-#ynh_script_progression --message="Adding a configuration file..." --weight=1
-
-#ynh_add_config --template="../conf/.env" --destination="$install_dir/.env"
-
-#chown -R $app:www-data "$install_dir"
 
 #=================================================
 # END OF SCRIPT
