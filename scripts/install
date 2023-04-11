@@ -46,15 +46,6 @@ ynh_add_nginx_config
 ynh_add_config --template="endpoint.nginx.conf" --destination="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
-# ADD A CONFIGURATION
-#=================================================
-ynh_script_progression --message="Adding a configuration file..." --weight=1
-
-ynh_add_config --template="../conf/.env" --destination="$install_dir/.env"
-
-chown -R $app:www-data "$install_dir"
-
-#=================================================
 # END OF SCRIPT
 #=================================================
 
