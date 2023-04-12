@@ -16,10 +16,6 @@ source /usr/share/yunohost/helpers
 synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=domain)
 synapse_port=$(ynh_app_setting_get --app=$synapse_app --key=synapse_port)
 
-#=================================================
-# STORE SETTINGS FROM MANIFEST
-#=================================================
-
 ynh_app_setting_set --app=$app --key=synapse_domain --value=$synapse_domain
 ynh_app_setting_set --app=$app --key=synapse_port --value=$synapse_port
 
