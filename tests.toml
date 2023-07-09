@@ -10,7 +10,7 @@ test_format = 1.0
 
     preinstall = """
     sudo yunohost tools update apps
-	sudo yunohost app install https://github.com/YunoHost-Apps/synapse_ynh/tree/823f98a8cbe108ad4cc0e38e280a83401dca2b9f -a "domain=sub.domain.tld&server_name=$server_name&is_free_registration=$is_free_registration&jitsi_server=$jitsi_server" --force
+	sudo yunohost app install https://github.com/YunoHost-Apps/synapse_ynh/tree/1c36215f03e5bc1b4c22ec42f93e6188f73a9f36 -a "domain=sub.domain.tld&server_name=$server_name&is_free_registration=$is_free_registration&jitsi_server=$jitsi_server" --force
     """
 
     # -------------------------------
