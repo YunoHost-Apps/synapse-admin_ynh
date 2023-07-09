@@ -14,7 +14,7 @@ license = "Apache-2.0"
 code = "https://github.com/Awesome-Technologies/synapse-admin"
 
 [integration]
-yunohost = ">= 11.1.17"
+yunohost = ">= 11.1.21"
 architectures = "all"
 multi_instance = false
 ldap = false

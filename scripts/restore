@@ -10,24 +10,22 @@ source ../settings/scripts/_common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# STANDARD RESTORATION STEPS
-#=================================================
-# RESTORE THE NGINX CONFIGURATION
-#=================================================
-ynh_script_progression --message="Restoring the NGINX configuration..."
-
-ynh_restore_file --origin_path="/etc/nginx/conf.d/$domain.d/$app.conf"
-ynh_restore_file --origin_path="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
-
-#=================================================
 # RESTORE THE APP MAIN DIR
 #=================================================
-ynh_script_progression --message="Restoring the app main directory..." --weight=60
+ynh_script_progression --message="Restoring the app main directory..." --weight=10
 
 ynh_restore_file --origin_path="$install_dir"
 
 chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
+
+#=================================================
+# RESTORE THE NGINX CONFIGURATION
+#=================================================
+ynh_script_progression --message="Restoring the NGINX configuration..." --weight=1
+
+ynh_restore_file --origin_path="/etc/nginx/conf.d/$domain.d/$app.conf"
+ynh_restore_file --origin_path="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
 # GENERIC FINALIZATION
