@@ -29,8 +29,8 @@ ynh_script_progression --message="Adding system configurations related to $app..
 ynh_add_nginx_config
 
 # Create NGINX config to access /_synapse/admin endpoint
-synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=domain)
-synapse_port=$(ynh_app_setting_get --app=$synapse_app --key=synapse_port)
+synapse_domain=$(ynh_app_setting_get --app="$synapse_app" --key=domain)
+synapse_port=$(ynh_app_setting_get --app="$synapse_app" --key=synapse_port)
 ynh_add_config --template="endpoint.nginx.conf" --destination="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
