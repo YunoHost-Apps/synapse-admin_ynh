@@ -57,6 +57,13 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
+# UPDATE SYNAPSE ENDPOINT
+#=================================================
+ynh_script_progression --message="Updating NGINX web server configuration for Synapse..." --weight=2
+
+_update_synapse_nginx_config
+
+#=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1

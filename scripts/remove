@@ -14,17 +14,11 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Removing system configurations related to $app..." --weight=1
 
-ynh_exec_warn ls -lah "/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
-
 # Remove the dedicated NGINX config
 ynh_remove_nginx_config
 
-ynh_exec_warn ls -lah "/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
-
 # Remove NGINX config that enabled /_synapse/admin endpoint
 ynh_secure_remove --file="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
-
-ynh_exec_warn ls -lah "/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
 # END OF SCRIPT
