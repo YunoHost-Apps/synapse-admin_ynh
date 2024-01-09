@@ -1,1 +1,1 @@
-And admin UI for Matrix Synapse homeserver. 
+An admin UI for Matrix Synapse homeserver. 
