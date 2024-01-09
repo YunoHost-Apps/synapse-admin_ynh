@@ -16,9 +16,10 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-Admin UI for Synapse
+And admin UI for Matrix Synapse homeserver. 
 
-**Shipped version:** 0.8.7~ynh2
+
+**Shipped version:** 0.8.7~ynh3
 
 ## Screenshots
 
@@ -27,7 +28,7 @@ Admin UI for Synapse
 ## Documentation and resources
 
 * Upstream app code repository: <https://github.com/Awesome-Technologies/synapse-admin>
-* YunoHost documentation for this app: <https://yunohost.org/app_synapse-admin>
+* YunoHost Store: <https://apps.yunohost.org/app/synapse-admin>
 * Report a bug: <https://github.com/YunoHost-Apps/synapse-admin_ynh/issues>
 
 ## Developer info
