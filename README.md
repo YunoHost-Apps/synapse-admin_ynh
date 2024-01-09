@@ -16,7 +16,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 ## Overview
 
-And admin UI for Matrix Synapse homeserver. 
+An admin UI for Matrix Synapse homeserver. 
 
 
 **Shipped version:** 0.8.7~ynh3
