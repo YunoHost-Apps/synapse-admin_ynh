@@ -19,7 +19,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 An admin UI for Matrix Synapse homeserver. 
 
 
-**Shipped version:** 0.8.7~ynh3
+**Shipped version:** 0.9.0~ynh1
 
 ## Screenshots
 
