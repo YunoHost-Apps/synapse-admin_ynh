@@ -19,7 +19,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 An admin UI for Matrix Synapse homeserver. 
 
 
-**Version incluse :** 0.8.7~ynh3
+**Version incluse :** 0.9.1~ynh1
 
 ## Captures d’écran
 
