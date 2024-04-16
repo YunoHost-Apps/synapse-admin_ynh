@@ -15,9 +15,7 @@ _add_synapse_endpoint_nginx_config() {
     fi
 
     # In case the domain changed for some reason
-    shopt -s extglob
-    old_endpoint_confs_for_this_app="$(ls /etc/nginx/conf.d/!($synapse_domain).d/$app.endpoint.conf 2>/dev/null)"
-    shopt -u extglob
+    old_endpoint_confs_for_this_app="$(ls /etc/nginx/conf.d/*.d/$app.endpoint.conf 2>/dev/null | grep -v "$synapse_domain.d")"
     for FILE in $old_endpoint_confs_for_this_app
     do
         ynh_delete_file_checksum --file="$FILE"
