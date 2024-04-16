@@ -21,7 +21,7 @@ if ynh_compare_current_package_version --comparison le --version 0.8.3~ynh2; the
 fi
 
 # If synapse_app doesn't exist, create it and assume it is `synapse`
-if [ -z "$synapse_app" ]; then
+if [ -z "${synapse_app:-}" ]; then
     synapse_app="synapse"
     ynh_app_setting_set --app=$app --key=synapse_app --value=$synapse_app
 fi
@@ -57,24 +57,13 @@ chmod -R o-rwx "$install_dir"
 chown -R $app:www-data "$install_dir"
 
 #=================================================
-# UPDATE SYNAPSE ENDPOINT
-#=================================================
-ynh_script_progression --message="Updating NGINX web server configuration for Synapse..." --weight=2
-
-_update_synapse_nginx_config
-
-#=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
 
 # Create a dedicated nginx config
 ynh_add_nginx_config
-
-# Create NGINX config to access /_synapse/admin endpoint
-synapse_domain=$(ynh_app_setting_get --app=$synapse_app --key=domain)
-synapse_port=$(ynh_app_setting_get --app=$synapse_app --key=synapse_port)
-ynh_add_config --template="endpoint.nginx.conf" --destination="/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
+_add_synapse_endpoint_nginx_config
 
 #=================================================
 # END OF SCRIPT
