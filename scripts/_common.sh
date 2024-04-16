@@ -15,7 +15,7 @@ _add_synapse_endpoint_nginx_config() {
     fi
 
     # In case the domain changed for some reason
-    old_endpoint_confs_for_this_app="$(ls /etc/nginx/conf.d/*.d/$app.endpoint.conf 2>/dev/null | grep -v "$synapse_domain.d")"
+    old_endpoint_confs_for_this_app="$(ls /etc/nginx/conf.d/*.d/$app.endpoint.conf 2>/dev/null | grep -v "$synapse_domain.d" || true)"
     for FILE in $old_endpoint_confs_for_this_app
     do
         ynh_delete_file_checksum --file="$FILE"
