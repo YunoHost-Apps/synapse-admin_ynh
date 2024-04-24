@@ -19,7 +19,7 @@
 An admin UI for Matrix Synapse homeserver. 
 
 
-**分发版本：** 0.9.4~ynh1
+**分发版本：** 0.10.0~ynh1
 
 ## 截图
 

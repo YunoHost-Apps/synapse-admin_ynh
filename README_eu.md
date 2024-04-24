@@ -19,7 +19,7 @@ EZ editatu eskuz.
 An admin UI for Matrix Synapse homeserver. 
 
 
-**Paketatutako bertsioa:** 0.9.4~ynh1
+**Paketatutako bertsioa:** 0.10.0~ynh1
 
 ## Pantaila-argazkiak
 
