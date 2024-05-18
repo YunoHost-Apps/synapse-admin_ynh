@@ -10,18 +10,12 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# UPDATE SYNAPSE ENDPOINT
-#=================================================
-ynh_script_progression --message="Updating NGINX web server configuration for Synapse..." --weight=2
-
-_update_synapse_nginx_config
-
-#=================================================
 # MODIFY URL IN NGINX CONF
 #=================================================
 ynh_script_progression --message="Updating NGINX web server configuration..." --weight=1
 
 ynh_change_url_nginx_config
+_add_synapse_endpoint_nginx_config
 
 #=================================================
 # END OF SCRIPT

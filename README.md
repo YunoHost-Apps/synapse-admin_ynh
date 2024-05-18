@@ -19,7 +19,7 @@ It shall NOT be edited by hand.
 An admin UI for Matrix Synapse homeserver. 
 
 
-**Shipped version:** 0.9.1~ynh1
+**Shipped version:** 0.10.1~ynh1
 
 ## Screenshots
 

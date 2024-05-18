@@ -8,6 +8,8 @@
 
 source _common.sh
 source /usr/share/yunohost/helpers
+    
+synapse_domain=$(ynh_app_setting_get --app="$synapse_app" --key=domain)
 
 #=================================================
 # REMOVE SYSTEM CONFIGURATIONS
