@@ -3,7 +3,7 @@
 请勿手动编辑。
 -->
 
-# YunoHost 的 Synapse Admin
+# YunoHost 上的 Synapse Admin
 
 [![集成程度](https://dash.yunohost.org/integration/synapse-admin.svg)](https://dash.yunohost.org/appci/app/synapse-admin) ![工作状态](https://ci-apps.yunohost.org/ci/badges/synapse-admin.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/synapse-admin.maintain.svg)
 
