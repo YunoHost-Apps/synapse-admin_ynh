@@ -5,7 +5,7 @@ No se debe editar a mano.
 
 # Synapse Admin para Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/synapse-admin.svg)](https://dash.yunohost.org/appci/app/synapse-admin) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/synapse-admin.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/synapse-admin.maintain.svg)
+[![Nivel de integración](https://dash.yunohost.org/integration/synapse-admin.svg)](https://ci-apps.yunohost.org/ci/apps/synapse-admin/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/synapse-admin.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/synapse-admin.maintain.svg)
 
 [![Instalar Synapse Admin con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=synapse-admin)
 
@@ -19,7 +19,7 @@ No se debe editar a mano.
 An admin UI for Matrix Synapse homeserver. 
 
 
-**Versión actual:** 0.10.1~ynh1
+**Versión actual:** 0.10.2~ynh1
 
 ## Capturas
 
