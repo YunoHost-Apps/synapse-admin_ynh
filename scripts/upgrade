@@ -13,11 +13,7 @@ if ynh_app_upgrading_from_version_before_or_equal_to 0.8.3~ynh2; then
 fi
 
 # If synapse_app doesn't exist, create it and assume it is `synapse`
-# FIXMEhelpers2.1: maybe replace with: ynh_app_setting_set_default --key=synapse_app --value="synapse"
-if [ -z "${synapse_app:-}" ]; then
-    synapse_app="synapse"
-    ynh_app_setting_set --key=synapse_app --value=$synapse_app
-fi
+ynh_app_setting_set_default --key=synapse_app --value="synapse"
 
 # Delete service and nodejs dependencies
 if ynh_app_upgrading_from_version_before 0.8.7~ynh1; then
@@ -39,22 +35,15 @@ fi
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
+ynh_script_progression "Upgrading source files..."
 
-# FIXME: this is still supported but the recommendation is now to *always* re-setup the app sources wether or not the upstream sources changed
-if ynh_app_upstream_version_changed; then
-    ynh_script_progression "Upgrading source files..."
+ynh_setup_source --dest_dir="$install_dir"
 
-    ynh_setup_source --dest_dir="$install_dir"
-fi
-
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chmod -R o-rwx "$install_dir"
-#REMOVEME? Assuming the install dir is setup using ynh_setup_source, the proper chmod/chowns are now already applied and it shouldn't be necessary to tweak perms | chown -R $app:www-data "$install_dir"
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
 
-# Create a dedicated nginx config
 ynh_config_add_nginx
 _add_synapse_endpoint_nginx_config
 

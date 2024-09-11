@@ -10,10 +10,8 @@ synapse_domain=$(ynh_app_setting_get --app="$synapse_app" --key=domain)
 #=================================================
 ynh_script_progression "Removing system configurations related to $app..."
 
-# Remove the dedicated NGINX config
 ynh_config_remove_nginx
 
-# Remove NGINX config that enabled /_synapse/admin endpoint
 ynh_safe_rm "/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
