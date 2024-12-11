@@ -7,7 +7,7 @@ name = "Synapse Admin"
 description.en = "Admin UI for Synapse"
 description.fr = "Admin UI pour Synapse"
 
-version = "0.10.3-etke33~ynh1"
+version = "0.10.3.33~ynh1"
 
 maintainers = []
 
