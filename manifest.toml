@@ -7,13 +7,13 @@ name = "Synapse Admin"
 description.en = "Admin UI for Synapse"
 description.fr = "Admin UI pour Synapse"
 
-version = "0.10.3~ynh1"
+version = "0.10.3.33~ynh1"
 
 maintainers = []
 
 [upstream]
 license = "Apache-2.0"
-code = "https://github.com/Awesome-Technologies/synapse-admin"
+code = "https://github.com/etkecc/synapse-admin"
 
 [integration]
 yunohost = ">= 11.2.30"
@@ -49,8 +49,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/Awesome-Technologies/synapse-admin/releases/download/0.10.3/synapse-admin-0.10.3.tar.gz"
-    sha256 = "0998ee4e2d9e55d72c2d160fa70734a3484ebcf5b6f380204e19bc376f2d500d"
+    url = "https://github.com/etkecc/synapse-admin/releases/download/v0.10.3-etke33/synapse-admin.tar.gz"
+    sha256 = "ca1ba8d3b149b05db1723f763b908d9ee36a219f922c6327ef62b785826ca680"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = "synapse-admin-.*.tar.gz"

@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Synapse Admin YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/synapse-admin.svg)](https://ci-apps.yunohost.org/ci/apps/synapse-admin/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/synapse-admin.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/synapse-admin.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/synapse-admin)](https://ci-apps.yunohost.org/ci/apps/synapse-admin/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/synapse-admin)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/synapse-admin)
 
 [![Instalatu Synapse Admin YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=synapse-admin)
 
@@ -19,7 +21,7 @@ EZ editatu eskuz.
 An admin UI for Matrix Synapse homeserver. 
 
 
-**Paketatutako bertsioa:** 0.10.3~ynh1
+**Paketatutako bertsioa:** 0.10.3.33~ynh1
 
 ## Pantaila-argazkiak
 
@@ -27,7 +29,7 @@ An admin UI for Matrix Synapse homeserver.
 
 ## Dokumentazioa eta baliabideak
 
-- Jatorrizko aplikazioaren kode-gordailua: <https://github.com/Awesome-Technologies/synapse-admin>
+- Jatorrizko aplikazioaren kode-gordailua: <https://github.com/etkecc/synapse-admin>
 - YunoHost Denda: <https://apps.yunohost.org/app/synapse-admin>
 - Eman errore baten berri: <https://github.com/YunoHost-Apps/synapse-admin_ynh/issues>
 
