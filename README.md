@@ -5,7 +5,9 @@ It shall NOT be edited by hand.
 
 # Synapse Admin for YunoHost
 
-[![Integration level](https://dash.yunohost.org/integration/synapse-admin.svg)](https://ci-apps.yunohost.org/ci/apps/synapse-admin/) ![Working status](https://ci-apps.yunohost.org/ci/badges/synapse-admin.status.svg) ![Maintenance status](https://ci-apps.yunohost.org/ci/badges/synapse-admin.maintain.svg)
+[![Integration level](https://apps.yunohost.org/badge/integration/synapse-admin)](https://ci-apps.yunohost.org/ci/apps/synapse-admin/)
+![Working status](https://apps.yunohost.org/badge/state/synapse-admin)
+![Maintenance status](https://apps.yunohost.org/badge/maintained/synapse-admin)
 
 [![Install Synapse Admin with YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=synapse-admin)
 
@@ -19,7 +21,7 @@ It shall NOT be edited by hand.
 An admin UI for Matrix Synapse homeserver. 
 
 
-**Shipped version:** 0.10.3~ynh1
+**Shipped version:** 0.10.3.33~ynh1
 
 ## Screenshots
 
@@ -27,7 +29,7 @@ An admin UI for Matrix Synapse homeserver.
 
 ## Documentation and resources
 
-- Upstream app code repository: <https://github.com/Awesome-Technologies/synapse-admin>
+- Upstream app code repository: <https://github.com/etkecc/synapse-admin>
 - YunoHost Store: <https://apps.yunohost.org/app/synapse-admin>
 - Report a bug: <https://github.com/YunoHost-Apps/synapse-admin_ynh/issues>
 

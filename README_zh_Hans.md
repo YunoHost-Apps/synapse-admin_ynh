@@ -5,7 +5,9 @@
 
 # YunoHost 上的 Synapse Admin
 
-[![集成程度](https://dash.yunohost.org/integration/synapse-admin.svg)](https://ci-apps.yunohost.org/ci/apps/synapse-admin/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/synapse-admin.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/synapse-admin.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/synapse-admin)](https://ci-apps.yunohost.org/ci/apps/synapse-admin/)
+![工作状态](https://apps.yunohost.org/badge/state/synapse-admin)
+![维护状态](https://apps.yunohost.org/badge/maintained/synapse-admin)
 
 [![使用 YunoHost 安装 Synapse Admin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=synapse-admin)
 
@@ -19,7 +21,7 @@
 An admin UI for Matrix Synapse homeserver. 
 
 
-**分发版本：** 0.10.3~ynh1
+**分发版本：** 0.10.3.33~ynh1
 
 ## 截图
 
@@ -27,7 +29,7 @@ An admin UI for Matrix Synapse homeserver.
 
 ## 文档与资源
 
-- 上游应用代码库： <https://github.com/Awesome-Technologies/synapse-admin>
+- 上游应用代码库： <https://github.com/etkecc/synapse-admin>
 - YunoHost 商店： <https://apps.yunohost.org/app/synapse-admin>
 - 报告 bug： <https://github.com/YunoHost-Apps/synapse-admin_ynh/issues>
 
