@@ -7,7 +7,7 @@ name = "Synapse Admin"
 description.en = "Admin UI for Synapse"
 description.fr = "Admin UI pour Synapse"
 
-version = "0.10.3.33~ynh1"
+version = "0.10.3.35~ynh1"
 
 maintainers = []
 
@@ -48,8 +48,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/etkecc/synapse-admin/releases/download/v0.10.3-etke33/synapse-admin.tar.gz"
-    sha256 = "ca1ba8d3b149b05db1723f763b908d9ee36a219f922c6327ef62b785826ca680"
+    url = "https://github.com/etkecc/synapse-admin/releases/download/v0.10.3-etke35/synapse-admin.tar.gz"
+    sha256 = "61bbb1120156a9d27da29d71242e3e83c6b0d4945c5df647ba96ef9b18b2135e"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = "synapse-admin.tar.gz"
