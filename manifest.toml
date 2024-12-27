@@ -52,7 +52,8 @@ ram.runtime = "50M"
     sha256 = "ca1ba8d3b149b05db1723f763b908d9ee36a219f922c6327ef62b785826ca680"
 
     autoupdate.strategy = "latest_github_release"
-    autoupdate.asset = "synapse-admin-.*.tar.gz"
+    autoupdate.asset = "synapse-admin.tar.gz"
+    autoupdate.version_regex = "(.*)-etke(.*)"
 
     [resources.system_user]
 
