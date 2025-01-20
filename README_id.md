@@ -21,7 +21,7 @@ Ini TIDAK boleh diedit dengan tangan.
 An admin UI for Matrix Synapse homeserver. 
 
 
-**Versi terkirim:** 0.10.3.35~ynh1
+**Versi terkirim:** 0.10.3.36~ynh1
 
 ## Tangkapan Layar
 
