@@ -21,7 +21,7 @@ Hij mag NIET handmatig aangepast worden.
 An admin UI for Matrix Synapse homeserver. 
 
 
-**Geleverde versie:** 0.10.3.36~ynh1
+**Geleverde versie:** 0.10.3.37~ynh1
 
 ## Schermafdrukken
 

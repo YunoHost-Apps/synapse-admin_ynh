@@ -21,7 +21,7 @@ No se debe editar a mano.
 An admin UI for Matrix Synapse homeserver. 
 
 
-**Versión actual:** 0.10.3.36~ynh1
+**Versión actual:** 0.10.3.37~ynh1
 
 ## Capturas
 
