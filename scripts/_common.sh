@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#=================================================
+# COMMON VARIABLES AND CUSTOM HELPERS
+#=================================================
+
 _add_synapse_endpoint_nginx_config() {
 
     synapse_domain=$(ynh_app_setting_get --app="$synapse_app" --key=domain)

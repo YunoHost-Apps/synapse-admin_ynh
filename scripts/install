@@ -1,10 +1,14 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# GET SYNAPSE SETTINGS
+# INITIALIZE AND STORE SETTINGS
 #=================================================
 ynh_script_progression "Getting settings from Synapse..."
 
@@ -13,13 +17,15 @@ ynh_script_progression "Getting settings from Synapse..."
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-ynh_setup_source --dest_dir=$install_dir
+# Download, check integrity, uncompress and patch the source from manifest.toml
+ynh_setup_source --dest_dir="$install_dir"
 
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
 
+# Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_config_add_nginx
 _add_synapse_endpoint_nginx_config
 
