@@ -13,7 +13,6 @@ source /usr/share/yunohost/helpers
 ynh_script_progression "Updating NGINX web server configuration..."
 
 ynh_config_change_url_nginx
-_add_synapse_endpoint_nginx_config
 
 #=================================================
 # END OF SCRIPT

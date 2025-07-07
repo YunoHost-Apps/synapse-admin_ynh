@@ -49,8 +49,9 @@ ynh_setup_source --dest_dir="$install_dir"
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
 
+synapse_domain=$(ynh_app_setting_get --app="$synapse_app" --key=domain)
+ynh_safe_rm "/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 ynh_config_add_nginx
-_add_synapse_endpoint_nginx_config
 
 #=================================================
 # END OF SCRIPT
