@@ -33,6 +33,10 @@ ram.runtime = "50M"
     [install.domain]
     type = "domain"
 
+    [install.path]
+    type = "path"
+    default = "/synapse-admin"
+
     [install.synapse_app]
     ask.en = "Input the Synapse app ID you wish to connect to."
     ask.fr = "Entrez l'ID de l'app Synapse à laquelle vous souhaitez vous connecter."
