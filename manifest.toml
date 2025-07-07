@@ -9,7 +9,7 @@ description.fr = "Admin UI pour Synapse"
 
 version = "0.11.1.44~ynh1"
 
-maintainers = []
+maintainers = ["Josué Tille"]
 
 [upstream]
 license = "Apache-2.0"
