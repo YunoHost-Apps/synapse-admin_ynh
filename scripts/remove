@@ -7,7 +7,7 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-synapse_domain=$(ynh_app_setting_get --app="$synapse_app" --key=domain)
+
 
 #=================================================
 # REMOVE SYSTEM CONFIGURATIONS
@@ -15,8 +15,6 @@ synapse_domain=$(ynh_app_setting_get --app="$synapse_app" --key=domain)
 ynh_script_progression "Removing system configurations related to $app..."
 
 ynh_config_remove_nginx
-
-ynh_safe_rm "/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
 # END OF SCRIPT

@@ -24,7 +24,6 @@ synapse_domain=$(ynh_app_setting_get --app="$synapse_app" --key=domain)
 
 # Backup the NGINX configuration
 ynh_backup "/etc/nginx/conf.d/$domain.d/$app.conf"
-ynh_backup "/etc/nginx/conf.d/${synapse_domain}.d/$app.endpoint.conf"
 
 #=================================================
 # END OF SCRIPT
