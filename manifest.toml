@@ -37,14 +37,6 @@ ram.runtime = "50M"
     type = "path"
     default = "/synapse-admin"
 
-    [install.synapse_app]
-    ask.en = "Input the Synapse app ID you wish to connect to."
-    ask.fr = "Entrez l'ID de l'app Synapse à laquelle vous souhaitez vous connecter."
-    help.en = "Leave the default value if you have only one Synapse server installed."
-    help.fr = "Laissez la valeur par défaut si vous n'avez installé qu'un seul serveur Synapse."
-    type = "app"
-    default = "synapse"
-
     [install.init_main_permission]
     help.en = "If enabled, Synapse Admin will be accessible by people who do not have an account. This can be changed later via the webadmin."
     help.fr = "Si cette case est cochée, Synapse Admin sera accessible aux personnes n’ayant pas de compte. Vous pourrez changer ceci plus tard via la webadmin."

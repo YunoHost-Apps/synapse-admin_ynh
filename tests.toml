@@ -8,14 +8,6 @@ test_format = 1.0
     # Tests to run
     # ------------
 
-    preinstall = """
-    sudo yunohost tools update apps
-    sudo yunohost app install \
-        https://github.com/YunoHost-Apps/synapse_ynh \
-        -a "domain=domain.tld&init_main_permission=all_users&server_name=$server_name&is_free_registration=$is_free_registration&jitsi_server=$jitsi_server" \
-        --force
-    """
-    
     exclude = ["change_url"]
 
     # -------------------------------
