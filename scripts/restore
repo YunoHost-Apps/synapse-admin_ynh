@@ -20,8 +20,6 @@ ynh_restore "$install_dir"
 #=================================================
 ynh_script_progression "Restoring system configurations related to $app..."
 
-synapse_domain=$(ynh_app_setting_get --app="$synapse_app" --key=domain)
-
 ynh_restore "/etc/nginx/conf.d/$domain.d/$app.conf"
 
 #=================================================

@@ -3,28 +3,14 @@
 test_format = 1.0
 
 [default]
-
-    # ------------
-    # Tests to run
-    # ------------
-
-    preinstall = """
-    sudo yunohost tools update apps
-    sudo yunohost app install \
-        https://github.com/YunoHost-Apps/synapse_ynh \
-        -a "domain=domain.tld&init_main_permission=all_users&server_name=$server_name&is_free_registration=$is_free_registration&jitsi_server=$jitsi_server" \
-        --force
-    """
-    
-    exclude = ["change_url"]
-
     # -------------------------------
     # Default args to use for install
     # -------------------------------
+
+    args.allowed_matrix_server = "example.com"
 
     # -------------------------------
     # Commits to test upgrade from
     # -------------------------------
 
-    #test_upgrade_from.4eaa242f11e8e9c6ed7afbb7cdf07fd95f8d04a1.name = "Upgrade from 0.8.5~ynh5 and remove app build"
-    test_upgrade_from.84016fce4cf2ca8b209ecc669f826a128013c15f.name = "Upgrade from 0.10.3.37~ynh1"
+    test_upgrade_from.f3575065711ba4bb5b17f4ecf11ef1c4c5c441c5.name = "Before introducting new parameter allowed_matrix_servers"
