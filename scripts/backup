@@ -20,8 +20,6 @@ ynh_backup "$install_dir"
 # BACKUP SYSTEM CONFIGURATION
 #=================================================
 
-synapse_domain=$(ynh_app_setting_get --app="$synapse_app" --key=domain)
-
 # Backup the NGINX configuration
 ynh_backup "/etc/nginx/conf.d/$domain.d/$app.conf"
 
