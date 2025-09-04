@@ -21,8 +21,7 @@ helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
 
-ldap = true
-
+ldap = false
 sso = true
 
 disk = "50M"
@@ -36,6 +35,13 @@ ram.runtime = "50M"
     [install.path]
     type = "path"
     default = "/synapse-admin"
+
+    [install.allowed_matrix_servers]
+    ask.en = "Choose a Matrix server to allow the access or leave it empty to allow any synapse servers."
+    type = "tags"
+    optional = true
+    example = "my-own-homeserver.tld"
+    default = ""
 
     [install.init_main_permission]
     help.en = "If enabled, Synapse Admin will be accessible by people who do not have an account. This can be changed later via the webadmin."

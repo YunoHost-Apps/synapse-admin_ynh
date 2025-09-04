@@ -1,0 +1,9 @@
+{
+    {% if allowed_matrix_servers %}
+    "restrictBaseUrl": [
+    {% for s in allowed_matrix_servers.split(',') %}
+        "https://{{ s }}"{% if not loop.last %},{% endif %}
+    {% endfor %}
+    ]
+    {% endif %}
+}
