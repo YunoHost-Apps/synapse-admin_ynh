@@ -36,13 +36,17 @@ if ynh_app_upgrading_from_version_before 0.8.7~ynh3; then
     ynh_app_setting_delete --key=synapse_port
 fi
 
+ynh_app_setting_set_default --key=allowed_matrix_servers --value=""
+
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Upgrading source files..."
 
 # Download, check integrity, uncompress and patch the source from manifest.toml
-ynh_setup_source --dest_dir="$install_dir"
+ynh_setup_source --dest_dir="$install_dir" --keep=config.json
+
+configure_app
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS

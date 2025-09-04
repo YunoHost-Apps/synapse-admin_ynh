@@ -7,7 +7,7 @@ name = "Synapse Admin"
 description.en = "Admin UI for Synapse"
 description.fr = "Admin UI pour Synapse"
 
-version = "0.11.1.45~ynh1"
+version = "0.11.1.46~ynh1"
 
 maintainers = ["Josué Tille"]
 
@@ -21,8 +21,7 @@ helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
 
-ldap = true
-
+ldap = false
 sso = true
 
 disk = "50M"
@@ -37,13 +36,12 @@ ram.runtime = "50M"
     type = "path"
     default = "/synapse-admin"
 
-    [install.synapse_app]
-    ask.en = "Input the Synapse app ID you wish to connect to."
-    ask.fr = "Entrez l'ID de l'app Synapse à laquelle vous souhaitez vous connecter."
-    help.en = "Leave the default value if you have only one Synapse server installed."
-    help.fr = "Laissez la valeur par défaut si vous n'avez installé qu'un seul serveur Synapse."
-    type = "app"
-    default = "synapse"
+    [install.allowed_matrix_servers]
+    ask.en = "Choose a Matrix server to allow the access or leave it empty to allow any synapse servers."
+    type = "tags"
+    optional = true
+    example = "my-own-homeserver.tld"
+    default = ""
 
     [install.init_main_permission]
     help.en = "If enabled, Synapse Admin will be accessible by people who do not have an account. This can be changed later via the webadmin."
@@ -53,8 +51,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/etkecc/synapse-admin/releases/download/v0.11.1-etke45/synapse-admin.tar.gz"
-    sha256 = "c2d74af3522fbc55ddb63ec3b2bd9d3bd91e871df4b6554d2d83bf975c8d113e"
+    url = "https://github.com/etkecc/synapse-admin/releases/download/v0.11.1-etke46/synapse-admin.tar.gz"
+    sha256 = "588dba92e4c5f8aeb7dfb45ba77d405141c6c76e79c628d5f424b85536302e77"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = "synapse-admin.tar.gz"

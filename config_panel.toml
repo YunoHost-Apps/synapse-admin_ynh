@@ -1,0 +1,15 @@
+version = "1.0"
+
+[main]
+name.en = "Synapse admin configuration"
+
+    [main.config]
+    name.en = "Configuration Options"
+    name.fr = "Options de configuration"
+
+
+        [main.config.allowed_matrix_servers]
+        ask.en = "Choose a Matrix server to allow the access or leave it empty to allow any synapse servers."
+        type = "tags"
+        example = "my-own-homeserver.tld"
+        default = ""
