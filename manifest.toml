@@ -7,7 +7,7 @@ name = "Ketesa"
 description.en = "Admin UI for Matrix homeservers"
 description.fr = "Interface d'administration pour serveurs Matrix"
 
-version = "1.4.0~ynh1"
+version = "1.5.0~ynh1"
 
 maintainers = ["Josué Tille"]
 
@@ -52,8 +52,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/etkecc/ketesa/releases/download/v1.4.0/ketesa.tar.gz"
-    sha256 = "34351c13293e66ed3c024598ce48bbc7b347784b9e618b0ceaf1cb42a7a730b7"
+    url = "https://github.com/etkecc/ketesa/releases/download/v1.5.0/ketesa.tar.gz"
+    sha256 = "1cadaf21d1732d49079fd055ced5759a4243b5d57eb14a5478ba0067d89943c2"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset = "ketesa.tar.gz"
